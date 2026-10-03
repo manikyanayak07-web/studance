@@ -5,13 +5,13 @@ app = Flask(__name__)
 app.secret_key = "blaDez_secret_key"  # Needed for login sessions
 
 # Database connection
+import sqlite3
+
 def get_db_connection():
-    return mysql.connector.connect(
-        host="localhost",
-        user="root",             # 👈 root user
-        password="manikya07",    # 👈 your actual MySQL root password
-        database="attendance_db"
-    )
+    conn = sqlite3.connect("attendance.db")
+    conn.row_factory = sqlite3.Row
+    return conn
+
 
 
 # ---------------- LOGIN ----------------
