@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS attendance (
 )
 ''')
 
-# Add default user
+# 👇 Add default user
 c.execute("INSERT INTO users (username, password) VALUES (?, ?)", ("admin", "mahi07"))
 
 conn.commit()

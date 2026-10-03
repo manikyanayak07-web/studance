@@ -1,0 +1,28 @@
+<h2>Mark Attendance</h2>
+<form method="POST">
+  <label>Student ID:</label>
+  <input type="number" name="student_id" required>
+  
+  <label>Date:</label>
+  <input type="date" name="date" required>
+  
+  <label>Status:</label>
+  <select name="status">
+    <option value="Present">Present</option>
+    <option value="Absent">Absent</option>
+  </select>
+  
+  <button type="submit">Save</button>
+</form>
+
+<h3>Attendance Records</h3>
+<table border="1">
+  <tr><th>Name</th><th>Date</th><th>Status</th></tr>
+  {% for r in records %}
+    <tr>
+      <td>{{ r[1] }}</td>
+      <td>{{ r[2] }}</td>
+      <td>{{ r[3] }}</td>
+    </tr>
+  {% endfor %}
+</table>
